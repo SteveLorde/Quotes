@@ -1,6 +1,6 @@
 ﻿namespace Quotes.Client.Services;
 
-public static class seededdata
+public static class SeededData
 {
     
 }

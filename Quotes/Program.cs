@@ -1,11 +1,13 @@
 using Quotes.Client.Pages;
 using Quotes.Components;
+using Quotes.Services;
+using Quotes.Services.DataSeed;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveWebAssemblyComponents();
+builder.Services.AddRazorComponents().AddInteractiveWebAssemblyComponents();
+builder.Services.AddScoped<IDataSeed,DataSeed>();
 
 var app = builder.Build();
 
@@ -26,8 +28,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Counter).Assembly);
+app.MapRazorComponents<App>().AddInteractiveWebAssemblyRenderMode().AddAdditionalAssemblies(typeof(Counter).Assembly);
 
 app.Run();
