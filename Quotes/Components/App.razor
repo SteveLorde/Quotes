@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Quotes.Services.QuotesData
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,12 +10,13 @@
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="Quotes.styles.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="Styling.css" />
     <HeadOutlet @rendermode="@InteractiveWebAssembly" />
 </head>
 
 <body>
-    <QuotesCanvas/>
-    <script src="_framework/blazor.web.js"></script>
+<QuotesCanvas/>
+<script src="_framework/blazor.web.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,21 @@
-﻿@rendermode InteractiveWebAssembly
+﻿@using Quotes.Services.QuotesData
+@rendermode InteractiveWebAssembly
 
-<link rel="stylesheet" href="Styling.css" />
 
 
-<p>QuotedFeed</p>
+
+<div class="feedcanvas">
+    @foreach (var quote in seededquotes.quotes)
+    {
+        <div>
+            
+        </div>
+    }
+</div>
 
 
 @code {
+    SeededQuotes seededquotes = new SeededQuotes();
     
+    public int x = 2;
 }
